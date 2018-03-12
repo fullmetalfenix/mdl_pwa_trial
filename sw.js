@@ -1,5 +1,5 @@
 
-self.addEventListener('fetch', function(event){ //still on fetch so it updates more often (personal preference when debugging this part, should be install really)
+self.addEventListener('install', function(event){ // switched to install
     event.waitUntil(
         caches.open('coffee-4').then(function(cache){
             return cache.addAll([
@@ -22,24 +22,22 @@ self.addEventListener('fetch', function(event){ //still on fetch so it updates m
         })
     );
 
-    event.respondWith(
-        fetch(event.request).then(function(response){
-            if (response.status == 404) {
-              return new Response("Not Found! <a href='index.html'>Go Back</a>", {
-                headers: {'Content-Type': "text/html"}
-                });
-                //   Or erase that and respond with a proper 404 page:
-                //   event.respondWith(
-                //   fetch('404-page.html')
-            }
-            return response;
-        }).catch(function(){
-            return new Response("nope!")
-        })
-     );
 
 
    });
    
 
-
+   self.addEventListener('fetch', function(event){
+    event.respondWith(
+        caches.match(event.request).then(function(response) {
+          return response || fetch(event.request).then(function(response){
+            if(response.status == 404){ //if 404 - return this (please check repo notes about this)
+                return new Response("Not Found! <a href='index.html'>Go Back</a>", {
+                    headers: {'Content-Type': "text/html"}
+                });
+            }
+            return response; //if not status 404, return response              
+          });
+        })
+      );
+    });
