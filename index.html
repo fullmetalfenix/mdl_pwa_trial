@@ -12,6 +12,17 @@
 	<script src="bower_components/material-design-lite/material.js"></script>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script>
+		// Register SW Here:
+	 if(navigator.serviceWorker){
+	 navigator.serviceWorker.register('sw.js', {scope: '/gmdl/' /*Why not?*/}).then(function(reg){
+			 console.log('Horray! SW is up and running!')
+		 }).catch(function(err){
+			 console.log('Doh!');
+		 });
+	 }
+	
+	</script>
+	<script>
 		/*
 		 * Replace all SVG images with inline SVG
 		 */
