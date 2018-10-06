@@ -1,4 +1,4 @@
-## Note: as of 10/4/2018 the service worker I included orriginally does not seem to be up and running, I will be working on this in the coming days
+
 
 # Gmdl_pwa_trial
 Google Material Design Lite Service Worker / PWA Starter Trial 
