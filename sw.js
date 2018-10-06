@@ -3,6 +3,7 @@ self.addEventListener('install', function(event){ // switched to install
     event.waitUntil(
         caches.open('coffee-5').then(function(cache){
             return cache.addAll([
+              '/',
               'index.html',
               '5.jpg',
               '6.jpg',
