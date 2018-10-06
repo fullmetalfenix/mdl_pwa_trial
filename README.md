@@ -22,7 +22,7 @@ This is the initial code I started out with - its a fake coffee house site, I wa
 
 ### 2. git checkout manafest-added
 
-I know its not required, but I used a google workshop on PWA's to supplement the material in this course and this was the first step - I could have left it out but honestly I really wanted to see the effect that having a manifest would have on the lighthouse audit score. You can check it out yourself here by comparing [the initial site](https://fullmetalfenix.github.io/gmdl-initial/) to [the final version](https://fullmetalfenix.github.io/gmdl-with-sw/) _Note:_ I know I spelled manifest wrong in the branch name, it was late in the day
+I know its not required, but I used a google workshop on PWA's to supplement the material in this course and this was the first step - I could have left it out but honestly I really wanted to see the effect that having a manifest would have on the lighthouse audit score. You can check it out yourself here by comparing [the initial site](https://fullmetalfenix.github.io/gmdl-initial/index.html) to [the final version](https://fullmetalfenix.github.io/gmdl-with-sw/index.html) _Note:_ I know I spelled manifest wrong in the branch name, it was late in the day
 
 ### 3. git checkout would-you-like-to-register
 
